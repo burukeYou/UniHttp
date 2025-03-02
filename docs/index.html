@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+    <!-- 右侧生成目录css   -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+
+    <style>
+      /* 调整目录容器宽度 */
+      .app-sub-sidebar {
+        width: 260px !important;  /* 右侧目录宽度 */
+        min-width: 260px !important;
+        max-width: 260px !important;
+      }
+    
+      /* 防止目录项换行 */
+      .app-sub-sidebar li {
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+      }
+    
+      /* 添加横向滚动条（可选） */
+      .app-sub-sidebar {
+        overflow-x: auto !important;
+      }
+    
+      /* 调整目录缩进（可选） */
+      .app-sub-sidebar ul {
+        padding-left: 12px !important;
+      }
+    </style>
+</head>
+<body>
+<div id="app">加载中....</div>
+<script>
+    window.$docsify = {
+        name: '',
+        repo: 'https://github.com/burukeYou/UniHttp',
+
+        // 加载侧边栏， 默认从当前目录下加载 _sidebar.md作为侧边栏
+        loadSidebar: true,
+
+        // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
+        //subMaxLevel: 2,
+
+        // 添加目录配置
+        toc: {
+            scope: '.markdown-section',
+            headings: 'h1, h2, h3, h4, h5, h6',
+            title: '文章目录',
+            width: "300px"
+        },
+
+        // 加载导航栏， 默认从当前目录下加载 _navbar.md作为导航栏
+        loadNavbar: true,
+
+        // 是否显示封面页
+        coverpage: true,
+        onlyCover: true,
+
+        // 是否开启搜索
+        search: 'auto',
+        search: {
+            paths: 'auto',
+            placeholder: '搜索',
+            noData: '没有找到相关内容',
+        },
+
+        // 分页
+        pagination: {
+            previousText: '上一页',
+            nextText: '下一页',
+            crossChapter: true,
+            crossChapterText: true,
+        },
+
+        // 复制到剪贴板
+        copyCode: {
+            buttonText: '复制',
+            errorText: '复制失败',
+            successText: '复制成功',
+        },
+
+        // 字数统计
+        count:{
+            countable:true,
+            fontsize:'0.9em',
+            color:'rgb(90,90,90)',
+            language:'chinese'
+        }
+    }
+</script>
+
+
+<!--官方文档：https://docsify.js.org/#/zh-cn -->
+<!-- 插件市场： https://github.com/docsifyjs/awesome-docsify -->
+
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+<!-- 搜索插件 -->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+<!-- 右侧生成目录-->
+<script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+
+<!-- 分页 -->
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+<!-- 复制到黏贴版 -->
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+
+<!-- 代码高亮  -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+
+<!-- 回到顶部 -->
+<!-- 文档地址： https://github.com/Sumsung524/docsify-backTop -->
+<script src="https://cdn.jsdelivr.net/gh/Sumsung524/docsify-backTop/dist/docsify-backTop.min.js"></script>
+
+<!-- 字数统计 -->
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+
+<!--主题 -->
+
+
+</body>
+</html>
