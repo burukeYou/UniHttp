@@ -1,7 +1,7 @@
 
 
 # 1、简介
-UniHttp提供了 `@SslCfg `注解，支持配置SSL的证书、keyStore、使用的加密套件、协议版本，以及支持`单向`和`双向`的SSL认证配置。   并且无论是证书和keyStore都支持配置文件内容或者文件路径。 `并且该注解的所有属性值都支持配置成环境变量`
+UniHttp提供了 `@SslCfg `注解，支持配置SSL的证书、keyStore、使用的加密套件、协议版本，以及支持`单向`和`双向`的SSL认证配置。   并且无论是证书和keyStore都支持直接配置文件内容或者文件路径。 `并且该注解的所有属性值都支持配置成环境变量`
 
 该注解可配置到具体接口类上，自定义的@HttpApi注解上、方法上等等 . 比如
 
@@ -9,7 +9,7 @@ UniHttp提供了 `@SslCfg `注解，支持配置SSL的证书、keyStore、使用
 // 具体HttpApi接口类上
 @SslCfg 
 @HttpApi
-interfacte UserSeviceAPi{
+interfacte UserSeviceAPI {
 }
 
 // 方法上 
@@ -17,7 +17,7 @@ interfacte UserSeviceAPi{
  @SslCfg 
  BaseRsp<String> get01(@QueryPar("name") String name);
 
-// 自定义的@HttpApi注解上
+// 自定义的@HttpApi组合注解上
 @HttpApi
 @SslCfg 
 public @interface MyHttpApi {
@@ -26,7 +26,7 @@ public @interface MyHttpApi {
 ```
 
 #  2、单向认证
-单向认证支持直接配置 证书certificate 或者 keysotre。 并且支持配置成文件路径、或者文件base64内容 ,  会动态识别和取值。
+单向认证支持直接配置 证书certificate 或者 密钥库keysotre。 并且支持配置成文件路径、或者文件base64内容 ,  会动态识别和取值。
 
 配法1、使用证书文件配置信任证书:
 ```java
@@ -55,8 +55,7 @@ public @interface MyHttpApi {
 )
 ```
 
-配法3、如果你啥证书也没有，也可以配置直接关闭SSL验证。
-
+配法3、如果啥证书也没有，也可以配置直接关闭SSL验证。
 
 
 ```java
@@ -83,7 +82,7 @@ public @interface MyHttpApi {
 ```
 
 
-配法2、如果已经放到keysotre文件里也可以直接配置keystore文件
+配法2、如果已经放到keysotre文件里也可以直接配置keystore密钥库文件
 ```java
 @SslCfg(
         // keystore文件路径    （当前同上也可配置文件base64内容、或者环境变量）
@@ -98,7 +97,6 @@ public @interface MyHttpApi {
         keyPassword = "key条目密码"
 )
 ```
-
 
 
 #  4、自定义HttpClient时处理

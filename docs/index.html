@@ -9,33 +9,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
     <!-- 右侧生成目录css   -->
-    <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
 
-    <style>
-      /* 调整目录容器宽度 */
-      .app-sub-sidebar {
-        width: 260px !important;  /* 右侧目录宽度 */
-        min-width: 260px !important;
-        max-width: 260px !important;
-      }
-    
-      /* 防止目录项换行 */
-      .app-sub-sidebar li {
-        white-space: nowrap !important;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
-      }
-    
-      /* 添加横向滚动条（可选） */
-      .app-sub-sidebar {
-        overflow-x: auto !important;
-      }
-    
-      /* 调整目录缩进（可选） */
-      .app-sub-sidebar ul {
-        padding-left: 12px !important;
-      }
-    </style>
 </head>
 <body>
 <div id="app">加载中....</div>
@@ -51,11 +27,21 @@
         //subMaxLevel: 2,
 
         // 添加目录配置
+         // docsify-toc
+        // toc: {
+        //     scope: '.markdown-section',
+        //     headings: 'h1, h2, h3, h4, h5, h6',
+        //     title: '文章目录',
+        //     maxWidth: "80%",
+        //     collapse: true
+        // },
+
+        // docsify-plugin-toc
+        // https://github.com/justintien/docsify-plugin-toc
         toc: {
-            scope: '.markdown-section',
-            headings: 'h1, h2, h3, h4, h5, h6',
-            title: '文章目录',
-            width: "300px"
+          tocMaxLevel: 5,
+          target: 'h1,h2, h3, h4',
+          ignoreHeaders:  ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
         },
 
         // 加载导航栏， 默认从当前目录下加载 _navbar.md作为导航栏
@@ -90,10 +76,10 @@
 
         // 字数统计
         count:{
-            countable:true,
-            fontsize:'0.9em',
-            color:'rgb(90,90,90)',
-            language:'chinese'
+          countable:true,
+          fontsize:'0.9em',
+          color:'rgb(90,90,90)',
+          language:'chinese'
         }
     }
 </script>
@@ -109,7 +95,8 @@
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 
 <!-- 右侧生成目录-->
-<script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+<!-- <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script> -->
+<script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
 
 <!-- 分页 -->
 <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>

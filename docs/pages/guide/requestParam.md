@@ -1,4 +1,4 @@
-# 简介
+# 1、简介
 除了可以在@HttpInterface注解上指定静态请求参数外，Unittp 还提供了各种`@Par注解`（注解名后缀带Par） 去动态构建请求的各种参数，具体支持的请求参数构建注解如下：
 
 | 参数注解           | 描述                     |
@@ -18,7 +18,7 @@
 
 为方便说明，下文所描述的`普通值类型`，表示的是基本类型、包装类型、字符串等数据类型
 
-# URL查询参数
+# 2、URL查询参数
 `@QueryPar注解` 用于标记HTTP请求URL查询参数
 
 **支持的方法参数类型说明**：
@@ -44,7 +44,7 @@
 - 以方法参数名或者QueryPar注解配置的名字作为参数名， 方法参数值作为参数值
 
 
-# URL路径参数
+# 3、URL路径参数
 `@PathPar注解` 用于标记Http请求路径变量参数
 
 ```java
@@ -55,7 +55,7 @@
 最终会将 参数id值 替换到 请求路径的 "/getUser/{userId}/detail" 的 {userId} 上
 
 
-# 请求头参数
+# 4、请求头参数
 `@HeaderPar注解` 用于标记HTTP请求头参数
 
 **支持的方法参数类型说明**：
@@ -74,7 +74,7 @@
 
 
 
-# Cookie参数
+# 5、Cookie参数
 `@CookiePar注解` 用于标记HTTP请求头的cookie参数
 
 
@@ -111,10 +111,10 @@
 **4.显示使用内置Cookie对象、Cookie列表**
 - 不处理，以上传的cookie为准
 
-# 请求体
+# 6、请求体
 下面的请求体标记注解会自动设置对应的Content-type请求头，如果想要修改可以在注解 `@HttpInterface`的contentType参数上手动指定
 
-## JSON请求体
+## 6.1、JSON请求体
 `@BodyJsonPar注解`  用于标记Http请求体内容为JSON形式, 并自动设置请求的Content-type为 `application/json`
 
 
@@ -180,7 +180,7 @@ userAge参数:    `{"bbq":{"kk":{"user": 35}}}`
 ```
 
 
-## Text请求体
+## 6.2、Text请求体
 `@BodyTextPar` 用于标记Http请求体内容为TEXT文本形式, 并自动设置请求的Content-type为 `test/plain`
 
 **支持的方法参数类型说明**： Object
@@ -192,7 +192,7 @@ userAge参数:    `{"bbq":{"kk":{"user": 35}}}`
 ```
 
 
-## 表单form请求体
+## 6.3、表单form请求体
 `@BodyFormPar注解` 用于标记Http请求体内容为普通表单形式, 并自动设置请求的Content-type为 `application/x-www-form-urlencoded`
 
 
@@ -209,7 +209,7 @@ userAge参数:    `{"bbq":{"kk":{"user": 35}}}`
 ```
 
 
-## 表单Multipart请求体
+## 6.4、表单Multipart请求体
 `BodyMultiPartPar注解` 用于标记Http请求体内容为复杂表单形式, 并自动设置请求的Content-type为 `multipart/form-data`
 
 
@@ -250,7 +250,7 @@ userAge参数:    `{"bbq":{"kk":{"user": 35}}}`
 
 
 
-## XML请求体
+## 6.5、XML请求体
 `@BodyXmlPar注解` 用于标记Http请求体内容为XML形式, 并自动设置请求的Content-type为 `application/xml`
 
 **支持的方法参数类型说明**：  自定义类
@@ -272,7 +272,7 @@ userAge参数:    `{"bbq":{"kk":{"user": 35}}}`
 ```
 
 
-# @ComposePar注解
+# 7、@ComposePar注解
 这个注解本身不是对Http请求内容的配置，仅用于标记一个对象，然后会对该对象内的所有标记了`其他@Par注解的字段`进行嵌套解析处理，
 目的是减少方法参数数量，支持都内聚到一起配置
 

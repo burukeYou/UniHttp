@@ -4,11 +4,12 @@
 
 # UniHttp <small>burukeyou</small>
 
-> 声明式Http框架
-
+> 规范Http对接之旅
+- 声明式Http框架
 - 简单轻便无侵入
-- Web配置
-- 支持多协议
+- 数据模型绑定
+- 生命周期管理
+
 
 [GitHub](https://github.com/burukeYou/UniHttp)
 [Get Started](introduce.md)

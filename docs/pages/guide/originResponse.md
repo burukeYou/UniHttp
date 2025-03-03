@@ -11,7 +11,7 @@
 示例中，此时`HttpResponse<UserInfo>`里的泛型UserInfo才是代表接口实际返回的响应体内容，后续可直接手动获取
 
 通过 HttpResponse 对象可获取以下响应要素：
-- HTTP 状态码（
+- HTTP 状态码
 - 响应头信息
 - 响应Cookie集合
 - 反序列化后的响应体
