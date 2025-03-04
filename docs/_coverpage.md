@@ -7,8 +7,11 @@
 > 规范Http对接之旅
 - 声明式Http框架
 - 简单轻便无侵入
+- 十秒一个接口
+- 多样化配置
 - 数据模型绑定
 - 生命周期管理
+
 
 
 [GitHub](https://github.com/burukeYou/UniHttp)

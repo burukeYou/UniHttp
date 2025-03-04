@@ -1,7 +1,6 @@
 
 
-`@HttpInterface注解` 用于配置一个接口的参数，包括请求方式、请求路径、请求头、请求cookie、请求查询参数等等
-
+对接一个接口，我们首先需要使用`@HttpInterface注解`绑定到一个接口方法上， 该注解主要用于配置一个接口的参数，包括请求方式、请求路径、请求头、请求cookie、请求查询参数等等
 
 并且内置了以下请求方式的@HttpInterface，不必再每次手动指定请求方式
 - @PostHttpInterface
@@ -13,8 +12,9 @@
 
 常见的参数配置含义如下: 
 ```java
+    // 使用 POST 请求
     @PostHttpInterface(
-            // 接口url,  支持配置环境变量占位符
+            // 接口url（未配置则使用@HttpApi配置的）,  支持配置环境变量占位符
             url="http://localhost" ,
             // 请求路径,  支持配置环境变量占位符
             path = "/getUser",
@@ -26,7 +26,7 @@
             paramStr = "a=1&b=2&c=3&d=哈哈&e=%E7%89%9B%E9%80%BC",
             // cookie 字符串
             cookie = "name=1;sessionId=999"，
-            // 请求体格式. 如果使用了 @Par注解标记请求体不需要手动指定
+            // 请求体格式. 如果使用了 @Par注解标记请求体不需要手动指定， 否则会覆盖
             contentType= "appliaction/json;chartset=utf-8"
     )
     void getUser();

@@ -4,14 +4,7 @@
 [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/burukeYou/fast-retry/blob/main/LICENSE)
 
 
-UniHttp 是一个声明式 HTTP 请求对接框架，帮助开发者快速完成第三方 HTTP 接口对接。通过简洁的配置即可实现接口复用，无需关注底层请求实现细节：
-
-与传统 HTTP 客户端（如 HttpClient/OkHttp）的区别：
-- 非替代关系而是更高层抽象
-- 专注业务对接而非协议实现
-- 支持通过 SPI 扩展请求处理流程
-- 提供更简洁易用的HTTP配置
-
+UniHttp 是一个声明式HTTP框架，帮助开发者快速完成第三方HTTP接口接入。通过简洁的定义，再配合各种高级功能特性即可实现各种复杂接口的接入，无需关注底层实现细节。
 
 # 特征
 - ✅ 声明式使用，标准化入口
@@ -20,12 +13,14 @@ UniHttp 是一个声明式 HTTP 请求对接框架，帮助开发者快速完成
 - ✅ 异步重试
 - ✅ SSL认证
 - ✅ 超时配置
-- ✅ 数据模型绑定
-- ✅ 多生命周期处理（预处理/后处理/异常处理）
+- ✅ 数据模型映射
+- ✅ 多种数据格式（JSON/XML）
+- ✅ 多生命周期处理（请求前/请求后/异常处理）
 
 
 
-# 使用后
+
+# 使用之前
 
 如果没有使用UniHttp， 你的代码`可能`会是这样的
 
@@ -46,6 +41,7 @@ public class UserInfoAPI {
 
 ```
 
+# 使用之后
 
 但如果使用 `UniHttp`后 你的代码会是这样的
 

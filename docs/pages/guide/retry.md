@@ -59,7 +59,7 @@ UniHttp内部实现了两种重试机制，一种是简单的同步重试机制�
 
 
 
-#### 3.2.1、HttpRetryResultPolicy
+### 3.2.1、HttpRetryResultPolicy
 该策略主要用于根据HTTP响应结果判断是否进行重试， 
 
 实现HttpRetryResultPolicy接口， 根据响应结果UserInfo的status字段判断是否进行重试
@@ -77,7 +77,7 @@ UniHttp内部实现了两种重试机制，一种是简单的同步重试机制�
 ```
 
 
-#### 3.2.2、HttpRetryResponsePolicy
+### 3.2.2、HttpRetryResponsePolicy
 该策略主要用于根据HTTP响应结果判断是否进行重试， 
 
 实现HttpRetryResponsePolicy接口， 根据响应结果UserInfo的status字段判断是否进行重试
