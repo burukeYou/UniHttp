@@ -109,7 +109,7 @@ class UserAppService {
 # 3、文档地址
 更多高级功能和具体功能特性见文档: 
 
-[wiki文档](https://github.com/burukeYou/UniAPI/wiki)
+[使用文档](https://burukeyou.github.io/UniHttp)
 
 
 # 4、赞赏
